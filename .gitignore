@@ -1,0 +1,31 @@
+# Environment
+.env
+
+# Dependencies
+/vendor/
+/node_modules/
+
+# Writable directory (semua isi, kecuali index.html penjaga folder)
+/writable/cache/**
+/writable/logs/**
+/writable/session/**
+/writable/uploads/**
+!/writable/cache/index.html
+!/writable/logs/index.html
+!/writable/session/index.html
+!/writable/uploads/index.html
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Composer
+composer.phar
+
+# Debugbar files
+/writable/debugbar/*
+!/writable/debugbar/index.html
