@@ -1,61 +1,137 @@
-# CodeIgniter 4 Framework
+<div align="center">
 
-## What is CodeIgniter?
+# ♻️ Sistem Manajemen Bank Sampah Digital
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](https://codeigniter.com).
+**Aplikasi berbasis web untuk digitalisasi pengelolaan bank sampah** — mulai dari pencatatan setoran sampah, saldo tabungan nasabah, hingga laporan transaksi, dengan tiga peran pengguna: **Admin**, **Petugas**, dan **Nasabah**.
 
-This repository holds the distributable version of the framework.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
+![CodeIgniter](https://img.shields.io/badge/CodeIgniter%204-EF4223?style=for-the-badge&logo=codeigniter&logoColor=white)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)
 
-More information about the plans for version 4 can be found in [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) on the forums.
+</div>
 
-You can read the [user guide](https://codeigniter.com/user_guide/)
-corresponding to the latest version of the framework.
+---
 
-## Important Change with index.php
+## 📖 Tentang Proyek
 
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
+**Sistem Manajemen Bank Sampah Digital** dikembangkan sebagai proyek Ujian Akhir Semester (UAS) mata kuliah **Pemrograman Web Lanjut**. Aplikasi ini bertujuan membantu unit bank sampah dalam mengelola data nasabah, transaksi setoran sampah, dan saldo tabungan secara lebih rapi, transparan, dan efisien dibanding pencatatan manual.
 
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
+Sistem ini dibangun dengan arsitektur **MVC** menggunakan framework **CodeIgniter 4**, dan mendukung tiga peran pengguna dengan hak akses yang berbeda.
 
-**Please** read the user guide for a better explanation of how CI4 works!
+## 👥 Peran Pengguna
 
-## Repository Management
+| Peran | Deskripsi Akses |
+|---|---|
+| 🛡️ **Admin** | Mengelola data master (jenis sampah & harga), mengelola akun petugas & nasabah, memantau seluruh transaksi, dan melihat laporan keseluruhan sistem. |
+| 👷 **Petugas** | Mencatat transaksi setoran sampah milik nasabah, memperbarui saldo tabungan, dan mengelola data transaksi harian. |
+| 🙋 **Nasabah** | Melihat riwayat setoran sampah, memantau saldo tabungan pribadi, dan mengakses informasi transaksi miliknya. |
 
-We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
+## ✨ Fitur Utama
 
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
+- 🔐 Autentikasi & manajemen sesi berbasis peran (*role-based access control*)
+- 🧾 Pencatatan transaksi setoran sampah oleh petugas
+- 💰 Pengelolaan saldo tabungan nasabah secara otomatis
+- 📊 Dashboard ringkasan untuk masing-masing peran
+- 📁 Manajemen data master jenis & harga sampah (Admin)
+- 📜 Riwayat & histori transaksi per nasabah
 
-## Contributing
 
-We welcome contributions from the community.
+## 🛠️ Teknologi yang Digunakan
 
-Please read the [*Contributing to CodeIgniter*](https://github.com/codeigniter4/CodeIgniter4/blob/develop/CONTRIBUTING.md) section in the development repository.
+- **Backend:** PHP, CodeIgniter 4
+- **Frontend:** Bootstrap
+- **Database:** MySQL (via XAMPP)
+- **Tools:** Composer, XAMPP (Apache & MySQL)
 
-## Server Requirements
+## 🖼️ Tampilan Aplikasi
 
-PHP version 8.2 or higher is required, with the following extensions installed:
+## 🖼️ Tampilan Aplikasi
 
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
+| Login | Register |
+|---|---|
+| ![Login](docs/login.png) | ![Register](docs/register.png) |
 
-> [!WARNING]
-> - The end of life date for PHP 7.4 was November 28, 2022.
-> - The end of life date for PHP 8.0 was November 26, 2023.
-> - The end of life date for PHP 8.1 was December 31, 2025.
-> - If you are still using below PHP 8.2, you should upgrade immediately.
-> - The end of life date for PHP 8.2 will be December 31, 2026.
+| Dashboard Admin | Dashboard Petugas |
+|---|---|
+| ![Dashboard Admin](docs/dashboardadmin.png) | ![Dashboard Petugas](docs/dashboardpetugas.png) |
 
-Additionally, make sure that the following extensions are enabled in your PHP:
+| Dashboard Nasabah |
+|---|
+| ![Dashboard Nasabah](docs/dashboardnasabah.png) |
 
-- json (enabled by default - don't turn it off)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
+**
+
+## 🚀 Instalasi & Menjalankan Secara Lokal
+
+### Prasyarat
+- [XAMPP](https://www.apachefriends.org/) (PHP ≥ 8.1, MySQL)
+- [Composer](https://getcomposer.org/)
+- Git
+
+### Langkah-langkah
+
+1. **Clone repository**
+   ```bash
+   git clone https://github.com/rik0sec/bank-sampah-digital.git
+   cd bank-sampah-digital
+   ```
+
+2. **Install dependency**
+   ```bash
+   composer install
+   ```
+
+3. **Konfigurasi environment**
+   ```bash
+   cp env .env
+   ```
+   Lalu sesuaikan konfigurasi berikut di file `.env`:
+   ```
+   CI_ENVIRONMENT = development
+
+   database.default.hostname = localhost
+   database.default.database = bank_sampah_digital
+   database.default.username = root
+   database.default.password =
+   database.default.DBDriver = MySQLi
+   ```
+
+4. **Buat database**
+   - Aktifkan **Apache** dan **MySQL** di XAMPP
+   - Buat database baru bernama `bank_sampah` melalui phpMyAdmin
+   - Import file `database/bank_sampah.sql` melalui tab **Import** di phpMyAdmin
+
+5. **Jalankan migrasi (jika menggunakan migration CI4)**
+   ```bash
+   php spark migrate
+   ```
+
+6. **Jalankan server**
+   ```bash
+   php spark serve
+   ```
+   Aplikasi dapat diakses melalui `http://localhost:8080`
+
+## 📂 Struktur Proyek
+
+```
+bank-sampah-digital/
+├── app/            # Controller, Model, View, Config (logika utama aplikasi)
+├── public/         # Entry point aplikasi (index.php, assets)
+├── system/         # Core framework CodeIgniter 4
+├── tests/          # Unit test
+├── writable/       # Cache, log, upload file
+└── README.md
+```
+
+## 👤 Author
+
+Dikembangkan oleh **Riko Nugroho** sebagai proyek Ujian Akhir Semester — Mata Kuliah *Pemrograman Web Lanjut*, Semester 4.
+
+- GitHub: [@rik0sec](https://github.com/rik0sec)
+
+## 📄 Lisensi
+
+Proyek ini menggunakan lisensi [MIT](LICENSE).
