@@ -55,7 +55,7 @@ Sistem ini dibangun dengan arsitektur **MVC** menggunakan framework **CodeIgnite
 
 | Dashboard Admin | Dashboard Petugas |
 |---|---|
-| ![Dashboard Admin](docs/dashboardadmin.png) | ![Dashboard Petugas](docs/dashboardpetugas.png) |
+| ![Dashboard Petugas](docs/dashboardadmin.png) | ![Dashboard Admin](docs/dashboardpetugas.png) |
 
 | Dashboard Nasabah |
 |---|
